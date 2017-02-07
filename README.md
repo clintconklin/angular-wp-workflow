@@ -1,1 +1,3 @@
-Basic weback worflow proof of concept for committee apps.
+# committee-wp-workflow
+
+Basic weback workflow proof of concept for committee apps.
