@@ -1,0 +1,23 @@
+{
+  "name": "committee-workflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "Clint Conklin",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.6.2",
+    "css-loader": "^0.26.1",
+    "exports-loader": "^0.6.3",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "jquery": "^3.1.1",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.1"
+  }
+}
