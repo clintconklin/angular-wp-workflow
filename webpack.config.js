@@ -1,4 +1,5 @@
 const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CommonsChunkPlugin = require("./node_modules/webpack/lib/optimize/CommonsChunkPlugin");
 
@@ -36,6 +37,21 @@ var config = {
 	},
 	'module': {
 		'rules': [
+			/*{
+				'test': /\.cfm$/,
+				'loader': 'file-loader?name=[path][name].[ext]!extract-loader!html-loader',
+				'query': {
+					'minimize': true
+				}
+			},*/
+			{
+				'test': /\.js$/,
+				'exclude': /(node_modules|bower_components)/,
+				'loader': 'babel-loader',
+				'query': {
+					'presets': [ 'es2015' ]
+				}
+			},
 			{
 				'test': /styles\.less$/, // the 'styles' part seems optional
 				'use': ExtractTextPlugin.extract({
@@ -50,6 +66,9 @@ var config = {
 		]
 	},
 	'plugins': [
+		new UglifyJSPlugin({
+			'mangle': false
+		}),
         new CommonsChunkPlugin({
             'names': [ 'util', 'vendor' ],
             'minChunks': Infinity

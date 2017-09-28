@@ -3,7 +3,7 @@ import $ from 'jquery';
 import angular from 'angular';
 import WreckedApp from '../script/app'; // base app
 
-console.log('hi from sfrc (default)!');
+console.log('hi from sfrc... minified!!!');
 
 // a controller
 WreckedApp.controller('WreckedAngularController', ['$scope', function($scope) {
